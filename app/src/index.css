@@ -10,24 +10,74 @@ a {
   text-decoration: none;
 }
 
-nav a {
-  margin-right: 1rem;
-}
 
-header {
+.header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem;
+  position: sticky;
+  top: 0;
+  background: #f5f5dc;
+  z-index: 10;
+}
+
+.logo {
+  height: 40px;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #f5f5dc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.overlay-links a {
+  display: block;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .overlay-links a {
+    font-size: 1.2rem;
+  }
 }
 
 main {
   padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
+  justify-items: center;
 }
 
 .product-card {
@@ -35,6 +85,7 @@ main {
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  text-align: center;
 }
 
 .product-card img {
