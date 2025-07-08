@@ -92,3 +92,16 @@ main {
   width: 100%;
   height: auto;
 }
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.order-form input,
+.order-form textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+}

@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../Logo.svg'
+import { useCart } from './CartContext'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const { items } = useCart()
 
   const close = () => setOpen(false)
 
@@ -11,6 +13,7 @@ export default function Header() {
     <>
       <header className="header">
         <img src={logo} alt="FLO logo" className="logo" />
+        <Link to="/cart">Корзина ({items.length})</Link>
         <button className="menu-button" onClick={() => setOpen(true)} aria-label="Открыть меню">
           &#9776;
         </button>
@@ -25,6 +28,7 @@ export default function Header() {
             <Link to="/catalog" onClick={close}>Каталог</Link>
             <Link to="/about" onClick={close}>О проекте</Link>
             <Link to="/buyers" onClick={close}>Покупателям</Link>
+            <Link to="/cart" onClick={close}>Корзина ({items.length})</Link>
           </div>
         </nav>
       )}
