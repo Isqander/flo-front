@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import ProductCard from '../components/ProductCard'
+import { API_BASE } from '../api'
 
 export default function Catalog() {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    fetch('/api/products')
+    fetch(`${API_BASE}/api/products`)
       .then((r) => r.json())
       .then((data) => {
         if (Array.isArray(data)) setProducts(data)
